@@ -25,21 +25,21 @@
       document
         .getElementById("xml-xsl1")
         .addEventListener("click", function () {
-          var xsltProcessor = new XSLTProcessor();
-          var xslFile = new XMLHttpRequest();
+          let xsltProcessor = new XSLTProcessor();
+          let xslFile = new XMLHttpRequest();
           xslFile.open("GET", "mathml.xsl", false);
           xslFile.send(null);
           xsltProcessor.importStylesheet(xslFile.responseXML);
 
-          var xmlFile = new XMLHttpRequest();
+          let xmlFile = new XMLHttpRequest();
           xmlFile.open("GET", "mathml.xml", false);
           xmlFile.send(null);
 
-          var resultDocument = xsltProcessor.transformToDocument(
+          let resultDocument = xsltProcessor.transformToDocument(
             xmlFile.responseXML
           );
 
-          var newTab = window.open();
+          let newTab = window.open();
           newTab.document.write(
             new XMLSerializer().serializeToString(resultDocument)
           );
@@ -49,21 +49,21 @@
       document
         .getElementById("xml-xsl2")
         .addEventListener("click", function () {
-          var xsltProcessor = new XSLTProcessor();
-          var xslFile = new XMLHttpRequest();
+          let xsltProcessor = new XSLTProcessor();
+          let xslFile = new XMLHttpRequest();
           xslFile.open("GET", "svg.xsl", false);
           xslFile.send(null);
           xsltProcessor.importStylesheet(xslFile.responseXML);
 
-          var xmlFile = new XMLHttpRequest();
+          let xmlFile = new XMLHttpRequest();
           xmlFile.open("GET", "svg.xml", false);
           xmlFile.send(null);
 
-          var resultDocument = xsltProcessor.transformToDocument(
+          let resultDocument = xsltProcessor.transformToDocument(
             xmlFile.responseXML
           );
 
-          var newTab = window.open();
+          let newTab = window.open();
           newTab.document.write(
             new XMLSerializer().serializeToString(resultDocument)
           );
