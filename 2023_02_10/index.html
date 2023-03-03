@@ -19,7 +19,6 @@
     <h2>Анвар Нуруллин, группа P4108</h2>
     <div class="container">
       <button id="xml-xsl1">Задание 1</button>
-      <button id="xml-xsl2">Задание 2</button>
       <a href="mathml.xml">Задание 1</a>
       <a href="svg.xml">Задание 2</a>
     </div>
@@ -46,29 +45,6 @@
             new XMLSerializer().serializeToString(resultDocument)
           );
           newTab.focus();
-        });
-
-      document
-        .getElementById("xml-xsl2")
-        .addEventListener("click", function () {
-          let xsltProcessor = new XSLTProcessor();
-          let xslFile = new XMLHttpRequest();
-          xslFile.open("GET", "svg.xsl", false);
-          xslFile.send(null);
-          xsltProcessor.importStylesheet(xslFile.responseXML);
-
-          let xmlFile = new XMLHttpRequest();
-          xmlFile.open("GET", "svg.xml", false);
-          xmlFile.send(null);
-
-          let resultDocument = xsltProcessor.transformToDocument(
-            xmlFile.responseXML
-          );
-
-          let newTab = window.open();
-          newTab.document.write(
-            new XMLSerializer().serializeToString(resultDocument)
-          );
         });
     </script>
   </body>
