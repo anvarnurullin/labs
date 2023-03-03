@@ -1,4 +1,12 @@
-<строка>
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="1.xsd"?>
+<html>
+    <head>
+        <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <math display="block">
+               <строка>
        <операнд>σ</операнд>
        <оператор>=</оператор>
        <корень>
@@ -51,3 +59,6 @@
        </корень>
        <оператор>.</оператор>
       </строка>
+               </math>
+    </body>
+</html>
